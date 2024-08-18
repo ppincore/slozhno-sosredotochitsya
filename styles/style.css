@@ -2,4 +2,46 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  padding: 2.7vi;
+  font-size: var(--main-font-size, 18px);
+  line-height: var(--main-line-heihgt,130%);
+  font-family: var(--main-font, Arial, sans-serif);
+  background-color: var(--bg-color,#000028);
 }
+/* COMPNENTS */
+.accent-text{
+color:var(--main-color, #000028);
+background-color: var(--accent-color, #ff0070);
+color: var(--main-color, #000028);
+font-weight: var(--bold);
+}
+.shadow__modifier{
+  color: var(--title-color,#DB00FF);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+/* HEADER */
+.heading{
+  --main-line-heihgt:82.5%;
+  font-size: var(--title-font-size);
+  font-weight: 800;
+  line-height: var(--main-line-heihgt,82.5%);
+}
+
+/* MAIN */
+
+/* FOOTER */
+
+.content{
+
+}
+.content__text-title{
+  block-size: 23px;
+  min-inline-size:355px;
+  background-color: var(--accent-color);
+  color: var(--main-color, #000028);
+  font-weight: var(--bold);
+  display: flex;
+  align-items: center;
+  margin: 20px 0 10px;
+}
+
