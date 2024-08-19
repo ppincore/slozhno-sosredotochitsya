@@ -56,6 +56,12 @@ font-weight: var(--accent-fw,700);
   grid-area: description;
 }
 /* MAIN */
+.contetnt__text-section{
+  margin-block-start: 50px;
+}
+.contetnt__text-section:first-child{
+  margin-block-start: 20px;
+}
 
 /* FOOTER */
 .footer {
