@@ -2,34 +2,70 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  padding: 2.7vi;
   font-size: var(--main-font-size, 18px);
   line-height: var(--main-line-heihgt,130%);
   font-family: var(--main-font, Arial, sans-serif);
   background-color: var(--bg-color,#000028);
 }
+.content{
+  padding: 2.7vi;
+}
 /* COMPNENTS */
-.accent-text{
+.accent-decor{
 color:var(--main-color, #000028);
 background-color: var(--accent-color, #ff0070);
-color: var(--main-color, #000028);
-font-weight: var(--bold);
+font-weight: (--accent-fw,700);
 }
 .shadow__modifier{
   color: var(--title-color,#DB00FF);
-  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  text-shadow: 5px 5px 0 var(--accent-color, #ff0070);
+}
+.section__title{
+ color: var(--accent-color, #ff0070);
+ font-weight:var(--accent-fw,700);
 }
 /* HEADER */
 .heading{
   --main-line-heihgt:82.5%;
-  font-size: var(--title-font-size);
-  font-weight: 800;
+  font-size: 116px;
+  font-weight:var(--accent-fw,700);
   line-height: var(--main-line-heihgt,82.5%);
 }
-
+.header{
+  min-block-size: 668px ;
+  inline-size: 100%;
+}
+.hf__container{
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "head"
+    "title"
+    "description"; 
+}
+.header__theme-menu{
+  grid-area: head;
+}
+.header__title{
+  grid-area: title;
+}
+.header_accent-text{
+  grid-area: description;
+}
 /* MAIN */
 
 /* FOOTER */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .content{
 
@@ -37,9 +73,9 @@ font-weight: var(--bold);
 .content__text-title{
   block-size: 23px;
   min-inline-size:355px;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ff0070);
   color: var(--main-color, #000028);
-  font-weight: var(--bold);
+  font-weight: var(--accent-fw,700);
   display: flex;
   align-items: center;
   margin: 20px 0 10px;
