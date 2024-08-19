@@ -14,7 +14,7 @@
 .accent-decor{
 color:var(--main-color, #000028);
 background-color: var(--accent-color, #ff0070);
-font-weight: (--accent-fw,700);
+font-weight: var(--accent-fw,700);
 }
 .shadow__modifier{
   color: var(--title-color,#DB00FF);
