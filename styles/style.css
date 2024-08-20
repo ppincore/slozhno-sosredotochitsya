@@ -1,189 +1,161 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  /* grid */
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 40px 0px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  /* general styles*/
   font-size: var(--main-font-size, 18px);
   line-height: var(--main-line-heihgt, 130%);
   font-family: var(--main-font, Arial, sans-serif);
   background-color: var(--bg-color, #000028);
+  color: var(--text-color, #f1b2ce);
 }
-.content {
-  padding: 2.7vi;
+.container {
+  padding-inline: 2.5vi;
 }
-/* COMPNENTS */
-.accent-decor {
-  color: var(--main-color, #000028);
+.container:first-child {
+  padding-block-start: 2.5vi;
+}
+.container:last-child {
+  padding-block-end: 2.5vi;
+}
+/* 
+
+*/
+.header__text,
+.card__title {
   background-color: var(--accent-color, #ff0070);
+  color: var(--main-color, #000028);
   font-weight: var(--accent-fw, 700);
 }
-.shadow__modifier {
+
+/* HEADER */
+.header {
+  grid-area: header;
+  block-size: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 50px 0px;
+
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.header__title {
+  line-height: 82.5%;
+}
+.title__shadow {
+  font-size: 116px;
+  font-weight: 700;
   color: var(--title-color, #db00ff);
   text-shadow: 5px 5px 0 var(--accent-color, #ff0070);
 }
-.section__title {
-  color: var(--accent-color, #ff0070);
-  font-weight: var(--accent-fw, 700);
-  grid-area:question;
-}
-.content__list{
-  grid-area:answer;
-}
-.hf__container {
-  min-block-size: 100vh;
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  grid-template-areas: 
-  "head"
-  "title"
-  "description"; 
-}
-.heading {
-  --main-line-heihgt: 82.5%;
-  font-size: var(--title-font-size,116px);
-  font-weight: var(--accent-fw, 700);
-  line-height: var(--main-line-heihgt, 82.5%);
-  grid-area: title;
-  justify-self: center;
-  align-self: center;
-}
-/* HEADER */
-
-.header {
-  background-image: url(../images/cover-image-dark.png);
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center;
-}
-
-.header__theme-menu {
- grid-area: head;
- justify-self: end;
-}
-.header_accent-text {
-  grid-area: description;
-  align-self: start;
+.header__text {
   display: block;
-  justify-self: end;
+  background-color: var(--accent-color, #ff0070);
+  align-self: start;
 }
 /* MAIN */
-.contetnt__section {
-  margin-block-start: 50px;
+
+/* grid layout start*/
+.main,
+.content__section,
+.conntent__list,
+.list-item__card,
+.gallary__list {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
-.contetnt__section:first-child {
-  margin-block-start: 30px;
+.main {
+  grid-area: main;
+  gap: 50px 0px;
 }
-.section__title:last-of-type{
-  margin-block-end: 21px;
+.content__section,
+.conntent__list,
+.list-item__card {
+  gap: 20px 0;
+}
+.list-item__card,
+.gallary__list,
+.content__section:nth-last-child(1) {
+  gap: 10px 0;
 }
 
-/* .contetnt__section:first-child{
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 0.6fr 1.4fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "hero-section-title answer"
-    "hero-section-title answer";
-} */
- .content__list{
-display: flex;
-flex-direction: column;
-gap: 20px 0;
- }
-.content__list-item{
- display: flex;
- flex-direction: column;
- gap: 10px 0;
+/* grid layout end*/
+
+/* main general section styles */
+
+.content__section-title {
+  color: var(--accent-color, #ff0070);
+  font-weight: var(--accent-fw, 700);
 }
-.gallary__image{
+/* gallary */
+
+.gallary__image {
   display: block;
   object-fit: cover;
   object-position: center;
   block-size: 100%;
   inline-size: 100%;
 }
-.gallary__list{
-display: grid;
-gap: 10px;
-}
 
 /* FOOTER */
-
-.footer{
-  margin-block-start: 20px;
-}
-
-.content {
-}
-.content__text-title {
-  block-size: 23px;
-  min-inline-size: 355px;
-  background-color: var(--accent-color, #ff0070);
-  color: var(--main-color, #000028);
-  font-weight: var(--accent-fw, 700);
+.footer {
+  grid-area: footer;
+  block-size: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* margin: 20px 0 10px; */
 }
 
+/* media */
 
-
-/* MEDIA */
-/* общие */
-@media (768px <= width <= 1024px)   {  
-  .hf__container {
-grid-template-columns: 1fr 1fr; 
-gap: 75px 0px; 
-grid-template-areas: 
-  "head head"
-  "title title"
-  ". description"; 
+/* general media */
+@media (768px <= width <= 1024px) {
+  /* page */
+  .page {
+    gap: 60px 0;
   }
-  .heading {
-  --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  font-size: var(--title-font-size,116px);
-}
- .contetnt__section:first-child,
- .contetnt__section:nth-last-child(2){
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 0.7fr 1.3fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "question answer"; 
 
- }
- /* .contetnt__section:first-child:nth-last-child(1):first-child:first-of-type:first-child{
-  margin-block-start: 0px;
- } */
- .section__advice{
-  grid-area: answer;
-  align-self: start;
-  inline-size: 100%;
- }
-}
-/* для 768 */
-@media ( 375px < width < 1024px) {
-.heading{
-  justify-self: start;
-  margin-inline-start: -2vi;
-  /* отриц мардж */
-}
-}
-/* 1024 */
-@media (width >= 1024px) {
-  .content {
-    padding: 2vi;
+  /* header */
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      ". nav"
+      "title title"
+      ". description";
   }
-  .hf__container {
-    gap: 85px 0;
+  .header__theme-menu {
+    grid-area: nav;
   }
-  .heading{
-    word-spacing: 40px;
+  .header__title {
+    grid-area: title;
+    align-self: center;
   }
-}
+  .header__text {
+    grid-area: description;
+  }
 
-
+  /* main */
+  .main {
+    gap: 80px 0;
+  }
+  /* text section */
+  .content__section:nth-child(1) {
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0px 20px;
+  }
+  /* image section */
+}
