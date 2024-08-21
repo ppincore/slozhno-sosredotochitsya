@@ -38,7 +38,11 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
+  margin: 0 auto;
 }
+
 
 input,
 button,
