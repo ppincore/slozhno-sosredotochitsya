@@ -10,4 +10,5 @@
   --title-line-heihgt: 82.5%;
   --main-color:var(--bg-color,#000028);
   --accent-fw:700;
+  --main-padding: 2.5vi;
 }
