@@ -75,7 +75,7 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 55px 0px;
 
-  background-image: var(--background-image, url(../images/cover-image-dark.png));
+  background-image: var(--background-image, url(../images/cover-image.png));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
