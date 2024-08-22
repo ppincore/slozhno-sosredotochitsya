@@ -75,13 +75,13 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 55px 0px;
 
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--background-image, url(../images/cover-image-dark.png));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .land__title {
-  color: var(--brand-color, #db00ff);
+  color: var(--title-color, #db00ff);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
@@ -100,10 +100,11 @@
 
 .pseudo__rec {
   position: absolute;
-  display: inline-flex;
+  display: var(--visability,inline-flex);
   gap: 10px;
   inset-inline-end: 20px;
   inset-block-start: 10px;
+  
 }
 .pseudo__rec::before {
   content: "REC";
@@ -174,8 +175,7 @@
   gap: 50px 0px;
 }
 .content__section,
-.conntent__list,
-.list-item__card {
+.conntent__list{
   gap: 20px 0;
 }
 .list-item__card,
@@ -183,6 +183,13 @@
 .content__section:nth-last-child(1) {
   gap: 10px 0;
 }
+
+.content__section:nth-of-type(3) > .conntent__list > 
+.conntent__list-item > .list-item__card > 
+.card__title{
+font-weight: 400;
+}
+
 
 /* grid layout end*/
 /* link */
@@ -238,22 +245,24 @@
   .land__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
+  /* header */
   .header__text {
     max-inline-size: 50%;
     justify-self: end;
+  }
+  .header__title{
+    margin-inline-start: -2%;
   }
   /* main */
   .main {
     gap: 80px 0;
   }
   /* text section */
-
   .content__section:nth-child(1),
   .content__section:nth-child(3) {
     grid-template-columns: 0.5fr 1fr;
     gap: 0px 20px;
   }
-  
   .content__section:nth-of-type(2) > .content__section-title {
     display: block;
     max-inline-size: 30%;
@@ -269,7 +278,6 @@
       "tape books ice-cream"
       "tape street street";
   }
-  
   .gallary__list-item:nth-of-type(1) {
     grid-area: sunset;
   }
