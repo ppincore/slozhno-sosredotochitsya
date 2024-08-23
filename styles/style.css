@@ -17,7 +17,7 @@
   /* general styles*/
   font-size: var(--main-font-size, 18px);
   line-height: var(--main-line-heihgt, 130%);
-  font-family: var(--main-font, Arial, sans-serif);
+  font-family: var(--main-font, monospace);
   background-color: var(--bg-color, #000028);
   color: var(--text-color, #f1b2ce);
   /*  */
@@ -59,15 +59,15 @@
 }
 
 .corner_decoration::before {
-  border-inline-end: 1px solid var(--secondary-color, #ff0070);
-  border-block-start: 1px solid var(--secondary-color, #ff0070);
+  border-inline-end: 1px solid var(--headliner-color, #ff0070);
+  border-block-start: 1px solid var(--headliner-color, #ff0070);
   inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
 
 .corner_decoration::after {
-  border-inline-start: 1px solid var(--secondary-color, #ff0070);
-  border-block-end: 1px solid var(--secondary-color, #ff0070);
+  border-inline-start: 1px solid var(--headliner-color, #ff0070);
+  border-block-end: 1px solid var(--headliner-color, #ff0070);
   inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
@@ -132,11 +132,12 @@
 .header__theme-menu-list {
   display: grid;
   gap: 13px;
+
 }
 .header__theme-menu-button {
   background-color: transparent;
   font-size: var(--main-font-size, 18);
-  color: var(--accent-color, #ff0070);
+  color: var(--headliner-color,);
   padding: 1.5px 13px;
   text-transform: lowercase;
   cursor: pointer;
@@ -149,7 +150,9 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid;
+  
+  outline: 1px solid var(--headliner-color,#ff0070);
+  
 }
 
 .header__theme-menu-button:focus {
@@ -184,7 +187,10 @@
 .content__section:nth-last-child(1) {
   gap: 10px 0;
 }
-
+.section__solution{
+  display: grid;
+  gap: 20px 0;
+}
 .content__section:nth-of-type(3)
   > .section__solution
   > .conntent__list
@@ -197,6 +203,7 @@
 /* grid layout end*/
 /* link */
 .card_text-link {
+  color: var(--text-color, #f1b2ce);
   text-decoration: none;
 }
 .card_text-link:hover {
@@ -311,7 +318,7 @@
     grid-auto-columns: 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 0px 20px;
+    gap: 20px 20px;
   }
   .container,
   .container:first-child,
