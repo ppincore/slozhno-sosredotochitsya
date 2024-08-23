@@ -144,14 +144,14 @@
   line-height: 18px;
 }
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color, #ff0070);
+  outline: 1px solid var(--headliner-color, #ff0070);
   cursor: default;
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
   
-  outline: 1px solid var(--headliner-color,#ff0070);
+  outline: 1px solid var(--headliner-color-op,#ff0070);
   
 }
 

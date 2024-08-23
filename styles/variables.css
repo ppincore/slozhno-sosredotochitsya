@@ -18,4 +18,5 @@
   --main-padding: 2.5vi;
   --background-image: url(../images/cover-image-dark.png);
   --visability: inline-flex;
+  --headliner-color-op: var(--accent-color);
 }

@@ -13,16 +13,10 @@
   --background-image: url(../images/cover-image-dark.png);
   --visability: inline-flex;
   --headliner-color:#ff0070;
+  --headliner-color-op: rgba(255, 0, 112, 0.4);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #000028;
-    --headliner-color:#ff0070;
-    --text-color: #f1b2ce;
-    --main-color: #000028;
-    --accent-color: #ff0070;
-    --title-color: #db00ff;
-    --background-image: url(../images/cover-image-dark.png);
-    --visability: inline-flex;
+    --headliner-color-op: rgba(255, 0, 112, 0.4);
   }
 }
