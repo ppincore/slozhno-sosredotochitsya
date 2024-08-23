@@ -186,6 +186,7 @@
 }
 
 .content__section:nth-of-type(3)
+  > .section__solution
   > .conntent__list
   > .conntent__list-item
   > .list-item__card
