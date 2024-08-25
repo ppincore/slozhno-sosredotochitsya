@@ -29,13 +29,13 @@
   background-attachment: fixed;
 }
 .container {
-  padding-inline: var(--main-padding, 2.5vi);
+  padding-inline: var(--main-padding, 2.6vi);
 }
 .container:first-child {
-  padding-block-start: var(--main-padding, 2.5vi);
+  padding-block-start: var(--main-padding, 2.6vi);
 }
 .container:last-child {
-  padding-block-end: var(--main-padding, 2.5vi);
+  padding-block-end: var(--main-padding, 2.6i);
 }
 
 .header__text,
@@ -75,11 +75,12 @@
 /* HEADER */
 .header {
   grid-area: header;
+  min-block-size: 668px;
   block-size: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 50px 0px;
+  gap: 45px 0px;
 }
 .land__title {
   color: var(--title-color, #db00ff);
@@ -89,16 +90,20 @@
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   align-self: center;
 }
+.header > .land__title {
+  padding-block-end: 10px;
+}
 .shadow__decoration {
-  text-shadow: 1px 1px 0 var(--accent-color, #ff0070);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }
 .header__text {
   display: block;
   background-color: var(--accent-color, #ff0070);
   align-self: start;
+  line-height: 130%;
 }
 /* record decoration*/
-
+/* 12 2 2 2 2 2 2 2 2 2 2 2 2 2 2  2 2 2 2 2 2 2 2  2 2 2 2 2  2 2 2 2 2  2 2 2 2 2 2 2  2 2 2 2 2 2 2  2 2 2 2 2  2 2 2 2 2 2 2 2 2 2 */
 .pseudo__rec {
   position: absolute;
   display: var(--visability, inline-flex);
@@ -126,7 +131,7 @@
   display: grid;
   align-items: end;
   justify-items: end;
-  padding-block-end: 3.5vh;
+  padding-block-end: 3.33vh;
 }
 .header__theme-menu-list {
   display: grid;
@@ -136,7 +141,7 @@
   background-color: transparent;
   font-size: var(--main-font-size, 18);
   color: var(--headliner-color);
-  padding: 1.5px 13px;
+  padding: 3px 13px;
   text-transform: lowercase;
   cursor: pointer;
   line-height: 18px;
@@ -156,7 +161,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid currentColor;
 }
 /* MAIN */
 
@@ -180,19 +185,14 @@
 }
 .list-item__card,
 .gallary__list,
-.content__section:nth-last-child(1) {
+.gallary__section {
   gap: 10px 0;
 }
 .section__solution {
   display: grid;
   gap: 20px 0;
 }
-.content__section:nth-of-type(3)
-  > .section__solution
-  > .conntent__list
-  > .conntent__list-item
-  > .list-item__card
-  > .card__title {
+.thin-text {
   font-weight: 400;
 }
 
@@ -200,10 +200,9 @@
 /* link */
 .card_text-link {
   color: var(--text-color, #f1b2ce);
-  text-decoration: none;
 }
 .card_text-link:hover {
-  text-decoration: underline;
+  border-bottom: 1.5px solid currentColor;
 }
 .card_text-link:focus {
   outline: 0;
@@ -230,6 +229,7 @@
 /* FOOTER */
 .footer {
   grid-area: footer;
+  min-block-size: 668px;
   block-size: 100vh;
   display: flex;
   justify-content: center;
@@ -244,6 +244,9 @@
   .page {
     gap: 60px 0;
   }
+  .header {
+    gap: 50px;
+  }
   .pseudo__rec {
     inset-inline-end: 28px;
     inset-block-start: 20px;
@@ -251,6 +254,7 @@
   .header > .land__title {
     margin-inline-start: -2.5vi;
     margin-block-start: -2.5vi;
+    padding-block-end: 0px;
   }
   .land__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -268,12 +272,11 @@
     gap: 80px 0;
   }
   /* text section */
-  .content__section:nth-child(1),
-  .content__section:nth-child(3) {
+  .text__section-column {
     grid-template-columns: 0.5fr 1fr;
     gap: 0px 20px;
   }
-  .content__section:nth-of-type(2) > .content__section-title {
+  .text__section-raw > .content__section-title {
     display: block;
     max-inline-size: 30%;
   }
@@ -282,7 +285,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    gap: 25px;
+    gap: 20px;
     grid-template-areas:
       "sunset sunset ice-cream"
       "tape books ice-cream"
@@ -303,6 +306,9 @@
   .gallary__list-item:nth-of-type(5) {
     grid-area: street;
   }
+  .gallary__section {
+    gap: 20px 0;
+  }
 }
 
 @media (width >= 1024px) {
@@ -313,12 +319,12 @@
     margin-inline-start: -2vi;
     margin-block-start: -2vi;
   }
-  .content__section:nth-child(1),
-  .content__section:nth-child(3) {
-    gap: 0px 10px;
+  .text__section-column {
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0px 20px;
   }
 
-  .content__section:nth-of-type(2) > .conntent__list {
+  .text__section-raw > .conntent__list {
     grid-auto-columns: 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
