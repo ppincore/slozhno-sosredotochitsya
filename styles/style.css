@@ -247,7 +247,6 @@
   .header {
     gap: 50px;
     padding-inline-start: 0px;
-    
   }
   .pseudo__rec {
     inset-inline-end: 28px;
@@ -313,11 +312,8 @@
   .header {
     gap: 70px 0;
   }
-  .header > .land__title {
-
-  }
   .text__section-why,
-  .text__section-how{
+  .text__section-how {
     grid-template-columns: 0.5fr 1fr;
     gap: 0px 10px;
   }
