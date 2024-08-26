@@ -213,7 +213,7 @@
 /* main general section styles */
 /* link */
 .content__section-title {
-  color: var(--accent-color, #ff0070);
+  color: var(--headliner-color, #ff0070);
   font-weight: var(--accent-fw, 700);
   display: block;
 }
@@ -272,11 +272,12 @@
     gap: 80px 0;
   }
   /* text section */
-  .text__section-column {
+  .text__section-why,
+  .text__section-how {
     grid-template-columns: 0.5fr 1fr;
     gap: 0px 20px;
   }
-  .text__section-raw > .content__section-title {
+  .text__section-what > .content__section-title {
     display: block;
     max-inline-size: 30%;
   }
@@ -319,12 +320,13 @@
     margin-inline-start: -2vi;
     margin-block-start: -2vi;
   }
-  .text__section-column {
+  .text__section-why,
+  .text__section-how{
     grid-template-columns: 0.5fr 1fr;
-    gap: 0px 20px;
+    gap: 0px 10px;
   }
 
-  .text__section-raw > .conntent__list {
+  .text__section-what > .conntent__list {
     grid-auto-columns: 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
